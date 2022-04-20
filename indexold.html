@@ -6,6 +6,13 @@
         content="Torne sua Vida mais Inteligente com a Tecnologia e Alta Performance dos Produtos Semp TCL. Smartphones. Smart TVs. Vários Eletroportáteis. Caixas e Aparelhos de Som. Confira! HDR. Design Curvo. 4K. Tecnologia para sua Vida. Conheça as TVs TCL.">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script type="text/javascript" async="" src="https://www.googleadservices.com/pagead/conversion_async.js"></script>
+    <script src="https://connect.facebook.net/signals/config/425447021188025?v=2.9.57&amp;r=stable" async=""></script>
+    <script src="https://connect.facebook.net/signals/plugins/identity.js?v=2.9.57" async=""></script>
+    <script type="text/javascript" async="" src="https://connect.facebook.net/en_US/fbevents.js"></script>
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-TTMMTBV"></script>
+    <script type="text/javascript" src="/ruxitagentjs_ICA2Vfqru_10235220309135426.js"
         data-dtconfig="rid=RID_2418|rpid=-1809386163|domain=semptcl.com.br|reportUrl=/rb_bf05748aem|app=ea7c4b59f27d43eb|rcdec=1209600000|featureHash=ICA2Vfqru|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=pxmoa3dn|mel=100000|dpvc=1|ssv=4|lastModification=1648500404718|dtVersion=10235220309135426|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA2Vfqru_10235220309135426.js"></script>
     <link rel="stylesheet" type="text/css"
         href="https://www.semptcl.com.br/wp-content/themes/semptcl/css/bootstrap.min.css">
@@ -23,7 +30,16 @@
     <script src="https://www.semptcl.com.br/wp-content/themes/semptcl/js/jquery.cycle2.carousel.js"></script>
     <script src="https://www.semptcl.com.br/wp-content/themes/semptcl/js/script.js"></script>
 
+    <link rel="stylesheet" type="text/css"
+        href="https://www.semptcl.com.br/wp-content/themes/semptcl/chat/TPCHATEXPRESS/css/chatExpresswidget1.css?v=1932610383">
 
+    <script
+        src="https://www.semptcl.com.br/wp-content/themes/semptcl/chat/TPCHATEXPRESS/js/jquery.signalR-2.4.2.min.js?v=115226852"></script>
+    <script
+        src="https://www.semptcl.com.br/wp-content/themes/semptcl/chat/TPCHATEXPRESS/js/ChatExpressTP_V_1.1.js?v=940307023"></script>
+    <script
+        src="https://www.semptcl.com.br/wp-content/themes/semptcl/chat/TPCHATEXPRESS/js/tpWidget.js?v=1912098556"></script>
+    <script src="https://semp.teleperformance.com.br/ChatExpressTP/signalr/hubs"></script>
     <title>SEMP TCL</title>
 
     <script>
@@ -33,103 +49,6 @@
             }, 1500);
         }
     </script>
-
-<script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.8.0.min.js"></script>
-<script type="text/javascript">
-
-window.addEventListener("load", mediaSizer);
-        //window.addEventListener("resize", mediaSizer);
-        // Listeners that will react when the page first loads or is resized.
-        // If any of these events take place the mediaSizer() function executes.
-
-        var vizList = [
-
-                    "https://demo.tableau.com/t/LuizOliveira/views/FinanasCorporativas-PainelDemonstrativoFinanceiro_16498970583020/Cockpit-Finance",
-                    "https://demo.tableau.com/t/LuizOliveira/views/AnaliseCliente/Cliente" 
-
-				];
-        // Array of Tableau Server URLs for dashboard or sheet navigation.
-    
-        var viz,
-            vizLen = vizList.length,
-            vizCount = 0,
-            devType;
-        var options = {
-        	device: devType,
-        };
-
-
-        function mediaSizer() {
-        // Determines the correct viz layout according to screen sizes.
-        	if (window.matchMedia("(max-width: 480px)").matches) {
-				//alert("I am a phone layout!");
-				devType = 'phone';
-                vWidth = 480;
-				//options.device = 'phone';
-			} else if (window.matchMedia("(max-width: 980px)").matches) {
-				//alert("I am a tablet layout!");
-				devType = 'tablet';
-                vWidth = 980;
-				//options.device = 'tablet';
-			} else {
-				//alert("I am a desktop layout!");
-				devType = 'desktop';
-                vWidth = 1666;
-				//options.device = 'desktop';
-			}
-            console.log("devtype: "+devType )
-            console.log("launch0")
-			launchViz(0);
-            console.log("launch1")        
-            launchViz(1);
-			// Launches the viz again with the new sizing at the current index of vizList.
-      }
-
-
-      function launchViz(vizNav) {
-		// JS object targeting a div in the html document. (vizNav) will pass navigation values to move back and forth across vizList.
-        console.log("vizContainer"+vizNav)
-        console.log("devtype: "+devType )
-			var vizDiv = document.getElementById("vizContainer"+vizNav),
-			// Will embed the visualization on a div with id="VizContainer"
-			options = {
-				device: devType,
-                width: vWidth,
-				hideTabs: true,
-	            hideToolbar: true,
-	            onFirstInteractive: function () {
-	            	listenToMarksSelection();
-	            }
-	        };
-	        
-
-	        var vizURL = vizList[vizNav];
-	        // Dynamic URL returning the string from vizList at index = vizNav (viz to be displayed).
-
-					try {
-						// Initializes the viz from the array with desired options. 
-						viz = new tableau.Viz(vizDiv, vizURL, options);
-	        	if (!viz) throw 'viz not initialized'
-					}
-					catch(err) {
-						alert(err);
-					}
-					finally {
-						console.log('whatever')
-						console.count('initViz')
-					}
-	        
-		}
-
-</script>
-
-
-
-
-
-
-
-
     <style type="text/css">
         .heateorSssInstagramBackground {
             background: radial-gradient(circle at 30% 107%, #fdf497 0, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%)
@@ -318,7 +237,8 @@ window.addEventListener("load", mediaSizer);
         type="text/css" media="all">
     <script type="text/javascript" src="https://www.semptcl.com.br/wp-includes/js/jquery/jquery.min.js"
         id="jquery-core-js"></script>
-
+    <script type="text/javascript" src="https://www.semptcl.com.br/wp-includes/js/jquery/jquery-migrate.min.js"
+        id="jquery-migrate-js"></script>
     <script type="text/javascript"
         src="https://www.semptcl.com.br/wp-content/plugins/revslider/public/assets/js/revolution.tools.min.js"
         id="tp-tools-js"></script>
@@ -1181,11 +1101,7 @@ window.addEventListener("load", mediaSizer);
 <!--                    <script type='text/javascript' src='https://demo.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1409px; height: 831px;'><object class='tableauViz' width='1409' height='831' style='display:none;'><param name='host_url' value='https%3A%2F%2Fdemo.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;LuizOliveira' /><param name='name' value='AnaliseCliente&#47;Cliente' /><param name='tabs' value='no' /><param name='toolbar' value='no' /><param name='showAppBanner' value='false' /></object></div>
 -->
 
-<!--<script type='text/javascript' src='https://demo.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 480px; height: 1700px;'><object class='tableauViz' width='480' height='1700' style='display:none;'><param name='host_url' value='https%3A%2F%2Fdemo.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;LuizOliveira' /><param name='name' value='AnaliseCliente&#47;Cliente' /><param name='tabs' value='no' /><param name='toolbar' value='no' /><param name='device' value='phone' /><param name='showAppBanner' value='false' /></object></div>
--->
-
-<div id="vizContainer0" style="min-height:800px;"></div>
-
+<script type='text/javascript' src='https://demo.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 480px; height: 1700px;'><object class='tableauViz' width='480' height='1700' style='display:none;'><param name='host_url' value='https%3A%2F%2Fdemo.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;LuizOliveira' /><param name='name' value='AnaliseCliente&#47;Cliente' /><param name='tabs' value='no' /><param name='toolbar' value='no' /><param name='device' value='phone' /><param name='showAppBanner' value='false' /></object></div>
 
                 </div></div>
         <form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-2140" method="post" data-id="2140" data-name="Newsletter">
@@ -1228,16 +1144,8 @@ window.addEventListener("load", mediaSizer);
                 <!--<script type='text/javascript' src='https://demo.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1666px; height: 895px;'><object class='tableauViz' width='1666' height='895' style='display:none;'><param name='host_url' value='https%3A%2F%2Fdemo.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;LuizOliveira' /><param name='name' value='FinanasCorporativas-PainelDemonstrativoFinanceiro_16498970583020&#47;Cockpit-Finance&#47;a59e0219-02ec-4769-9581-c4430e5caec6&#47;00dd0af7-3174-4819-8860-fb160d89e571' /><param name='tabs' value='no' /><param name='toolbar' value='no' /><param name='showAppBanner' value='false' /></object></div>
                 -->
 
-<!--
+
                 <script type='text/javascript' src='https://demo.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 480px; height: 1900px;' ><object class='tableauViz' width='480' height='1900' ><param name='host_url' value='https%3A%2F%2Fdemo.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;LuizOliveira' /><param name='name' value='FinanasCorporativas-PainelDemonstrativoFinanceiro_16498970583020&#47;Cockpit-Finance&#47;a59e0219-02ec-4769-9581-c4430e5caec6&#47;00dd0af7-3174-4819-8860-fb160d89e571' /><param name='tabs' value='no' /><param name='toolbar' value='no' /><param name='device' value='phone' /><param name='showAppBanner' value='false' /></object></div>
--->
-
-
-                <div id="vizContainer1" style="min-height:800px;"></div>
-
-
-
-            
         </div>
     </div>
     
@@ -1364,10 +1272,59 @@ window.addEventListener("load", mediaSizer);
         var wpcf7 = { "api": { "root": "https:\/\/www.semptcl.com.br\/wp-json\/", "namespace": "contact-form-7\/v1" } };
 /* ]]> */
     </script>
+    <script type="text/javascript"
+        src="https://www.semptcl.com.br/wp-content/plugins/contact-form-7/includes/js/index.js"
+        id="contact-form-7-js"></script>
+    <script type="text/javascript"
+        src="https://www.semptcl.com.br/wp-content/plugins/drag-and-drop-multiple-file-upload-contact-form-7/assets/js/codedropz-uploader-min.js"
+        id="codedropz-uploader-js"></script>
+    <script type="text/javascript" id="dnd-upload-cf7-js-extra">
+        /* <![CDATA[ */
+        var dnd_cf7_uploader = { "ajax_url": "https:\/\/www.semptcl.com.br\/wp-admin\/admin-ajax.php", "ajax_nonce": "4b5ff6d23e", "drag_n_drop_upload": { "tag": "h4", "text": "Arraste os arquivos aqui", "or_separator": "ou", "browse": "Pesquise no computador", "server_max_error": "Erro ao realizar o upload", "large_file": "Arquivo \u00e9 muito grande", "inavalid_type": "Tipo de arquivo inv\u00e1lido", "max_file_limit": "10", "required": "This field is required.", "delete": { "text": "deleting", "title": "Remove" } }, "dnd_text_counter": "of", "disable_btn": "" };
+/* ]]> */
+    </script>
+    <script type="text/javascript"
+        src="https://www.semptcl.com.br/wp-content/plugins/drag-and-drop-multiple-file-upload-contact-form-7/assets/js/dnd-upload-cf7.js"
+        id="dnd-upload-cf7-js"></script>
+    <script type="text/javascript"
+        src="https://www.semptcl.com.br/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js"
+        id="jquery-blockui-js"></script>
+    <script type="text/javascript" id="wc-add-to-cart-js-extra">
+        /* <![CDATA[ */
+        var wc_add_to_cart_params = { "ajax_url": "\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/?wc-ajax=%%endpoint%%", "i18n_view_cart": "Ver carrinho", "cart_url": "https:\/\/www.semptcl.com.br", "is_cart": "", "cart_redirect_after_add": "no" };
+/* ]]> */
+    </script>
+    <script type="text/javascript"
+        src="https://www.semptcl.com.br/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js"
+        id="wc-add-to-cart-js"></script>
+    <script type="text/javascript"
+        src="https://www.semptcl.com.br/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js"
+        id="js-cookie-js"></script>
+    <script type="text/javascript" id="woocommerce-js-extra">
+        /* <![CDATA[ */
+        var woocommerce_params = { "ajax_url": "\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/?wc-ajax=%%endpoint%%" };
+/* ]]> */
+    </script>
+    <script type="text/javascript"
+        src="https://www.semptcl.com.br/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js"
+        id="woocommerce-js"></script>
+    <script type="text/javascript" id="wc-cart-fragments-js-extra">
+        /* <![CDATA[ */
+        var wc_cart_fragments_params = { "ajax_url": "\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/?wc-ajax=%%endpoint%%", "cart_hash_key": "wc_cart_hash_7ac6eb0ff116a094da65c30f2888fe42", "fragment_name": "wc_fragments_7ac6eb0ff116a094da65c30f2888fe42", "request_timeout": "5000" };
+/* ]]> */
+    </script>
+    <script type="text/javascript"
+        src="https://www.semptcl.com.br/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js"
+        id="wc-cart-fragments-js"></script>
+    <script type="text/javascript" id="smush-lazy-load-js-before">
+        window.lazySizesConfig = window.lazySizesConfig || {};
 
+        window.lazySizesConfig.lazyClass = 'lazyload';
+        window.lazySizesConfig.loadingClass = 'lazyloading';
+        window.lazySizesConfig.loadedClass = 'lazyloaded';
 
-
-
+        lazySizesConfig.loadMode = 1;
+    </script>
     <script type="text/javascript"
         src="https://www.semptcl.com.br/wp-content/plugins/wp-smushit/app/assets/js/smush-lazy-load.min.js"
         id="smush-lazy-load-js"></script>
@@ -1382,14 +1339,27 @@ window.addEventListener("load", mediaSizer);
         id="heateor_sss_sharing_js-js"></script>
     <script type="text/javascript" src="https://www.semptcl.com.br/wp-includes/js/wp-embed.min.js"
         id="wp-embed-js"></script>
+    <script type="text/javascript" src="//cdn.siteblindado.com/aw.js"></script><iframe height="0" width="0"
+        style="display: none; visibility: hidden;"
+        src="//9604315.fls.doubleclick.net/activityi;src=9604315;type=smp-tcl;cat=cm_se0;ord=8300394278570;gtm=2wg3n1;auiddc=1899197223.1648742923;~oref=https%3A%2F%2Fwww.semptcl.com.br%2F?"></iframe>
+
+
+
+
+
+
+    <script type="text/javascript" id="" src="https://www.googletagmanager.com/gtag/js?id=AW-730166789"></script>
     <script type="text/javascript"
         id="">var dataLayer = dataLayer || []; dataLayer.push({ event: "crto_homepage", crto: { email: "" } });</script>
 
-
+    <script type="text/javascript" id="" src="//static.criteo.net/js/ld/ld.js"></script>
     <script type="text/javascript"
         id="">window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments) } gtag("js", new Date); gtag("config", "AW-730166789");</script>
 
-  
+    <script type="text/javascript"
+        id="">window.criteo_q = window.criteo_q || []; window.criteo_q.push({ event: "setAccount", account: google_tag_manager["GTM-TTMMTBV"].macro(6) }, { event: "setEmail", email: google_tag_manager["GTM-TTMMTBV"].macro(7) }, { event: "setSiteType", type: google_tag_manager["GTM-TTMMTBV"].macro(8) }, { event: "viewHome", tms: "gtm-criteo-2.0.0" });</script>
+    <div id="criteo-tags-div" style="display: none;"></div><iframe height="0" width="0" title="Criteo DIS iframe"
+        style="display: none;"></iframe>
 </body>
 
 </html>
