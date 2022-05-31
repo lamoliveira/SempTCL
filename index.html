@@ -61,7 +61,8 @@ window.addEventListener("load", mediaSizer);
         var vizList = [
 
                     "https://demo.tableau.com/t/LuizOliveira/views/FinanasCorporativas-PainelDemonstrativoFinanceiro_16498970583020/Cockpit-Finance",
-                    "https://demo.tableau.com/t/LuizOliveira/views/AnaliseCliente/Cliente" 
+                    "https://demo.tableau.com/t/LuizOliveira/views/AnaliseCliente/Cliente" ,
+                    "https://demo.tableau.com/t/LuizOliveira/views/RestaurantAnalysisMVP/Cockpitk"
 
 				];
         // Array of Tableau Server URLs for dashboard or sheet navigation.
@@ -98,6 +99,8 @@ window.addEventListener("load", mediaSizer);
 			launchViz(0);
             console.log("launch1")        
             launchViz(1);
+            launchViz(2);
+            
 			// Launches the viz again with the new sizing at the current index of vizList.
       }
 
@@ -1204,6 +1207,13 @@ window.addEventListener("load", mediaSizer);
 
 
     </div></div>
+    <div style="text-align: center;">
+        <div style="display: inline-block;">
+            
+        <div id="vizContainer2" style="min-height:800px;"></div>
+    
+    
+        </div></div>
         <form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-2140" method="post" data-id="2140" data-name="Newsletter">
             <div class="mc4wp-form-fields">
                 <div class="cadastro py-0 py-md-5">
